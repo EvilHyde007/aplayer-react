@@ -1,0 +1,18 @@
+@media (prefers-color-scheme: dark) {
+  .aplayer {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+  }
+
+  .aplayer-title {
+    color: #ffffff !important;
+  }
+
+  .aplayer-author {
+    color: #bbbbbb !important;
+  }
+
+  .aplayer-icon {
+    fill: #ffffff !important;
+  }
+}
