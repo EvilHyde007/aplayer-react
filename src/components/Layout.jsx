@@ -1,57 +1,69 @@
 import { Outlet, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
 import Sidebar from "./Sidebar";
+import { useState } from "react";
 import APlayerWrapper from "./APlayerWrapper";
+import { Playlists } from "./Playlists";
 
 const Layout = () => {
   const location = useLocation();
   const isPlaylistRoute = /^\/playlist\/[^/]+$/.test(location.pathname);
-  const [currentTracks, setCurrentTracks] = useState({ id: null, list: [] });
-
-
-  // 🔁 Limpiar los tracks si salís de la ruta de playlist
-  // useEffect(() => {
-  //   if (!isPlaylistRoute) {
-  //     setCurrentTracks([]);
-  //   }
-  // }, [location.pathname]);
-
   const isMobile = window.innerWidth < 768;
 
+  const [activePlayers, setActivePlayers] = useState({});
+  const [visiblePlayerId, setVisiblePlayerId] = useState(null);
+
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: isMobile ? "column" : "row",
-        minHeight: "100vh",
-        background: "linear-gradient(to bottom right, #1db954, #191414)",
-        color: "white",
-      }}
-    >
-      <Sidebar />
+    <>
       <div
         style={{
-          flex: 1,
-          overflowY: "auto",
-          // padding: "48px",
-          paddingTop: "50px",
-          paddingBottom: currentTracks.length > 0 && isPlaylistRoute ? "100px" : "40px",
+          display: "flex",
+          flexDirection: isMobile ? "column" : "row",
+          minHeight: "100vh",
+          background: "linear-gradient(to bottom right, #1db954, #191414)",
+          color: "white",
         }}
       >
-        <Outlet context={{ setCurrentTracks }} />
+        <Sidebar />
+        <div
+          style={{
+            flex: 1,
+            overflowY: "auto",
+            paddingTop: "50px",
+            paddingBottom: isMobile ? "40px" : "120px",
+          }}
+        >
+          <Outlet
+            context={{
+              activePlayers,
+              setActivePlayers,
+              visiblePlayerId,
+              setVisiblePlayerId,
+            }}
+          />
+        </div>
       </div>
-     <APlayerWrapper tracks={currentTracks} visible={isPlaylistRoute} />
 
-
-
-
-
-
-      
-      {/* {currentTracks.length > 0 && isPlaylistRoute && (
-        <APlayerWrapper tracks={currentTracks} fixed={false} />
-      )} */}
-    </div>
+      <div
+        style={{
+          position: "fixed",
+          visibility: isPlaylistRoute ? "visible" : "hidden",
+          bottom: 0,
+          left: isMobile ? 0 : "240px",
+          right: 0,
+          top: isMobile ? "144px" : "180px",
+          padding: "10px 20px",
+        }}
+      >
+        {Object.entries(activePlayers).map(([id, ref]) => (
+          <APlayerWrapper
+            key={id}
+            tracks={{ id, list: Playlists[id].tracks }}
+            visible={visiblePlayerId === id}
+            ref={ref}
+          />
+        ))}
+      </div>
+    </>
   );
 };
 

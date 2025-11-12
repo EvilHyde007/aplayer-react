@@ -1,21 +1,43 @@
 import { useParams, Link, useOutletContext } from "react-router-dom";
 import { Playlists } from "./Playlists";
-import { useEffect } from "react";
+import { useRef, useEffect } from "react";
 
 function Player() {
   const { id } = useParams();
   const playlist = Playlists[id];
-  const { setCurrentTracks } = useOutletContext(); // ✅ primero obtenemos la función
+  const { activePlayers, setActivePlayers, setVisiblePlayerId } =
+    useOutletContext();
+
+  const localRef = useRef(null);
+
+  useEffect(() => {
+    if (!activePlayers[id]) {
+      setActivePlayers((prev) => ({ ...prev, [id]: localRef }));
+    }
+  }, [id, activePlayers, setActivePlayers]);
+
+  useEffect(() => {
+    setVisiblePlayerId(id);
+    return () => setVisiblePlayerId(null);
+  }, [id, setVisiblePlayerId]);
+
+  useEffect(() => {
+    const ap = localRef.current;
+    if (!ap) return;
+
+    ap.on("play", () => {
+      document.querySelectorAll(".aplayer").forEach((el) => {
+        const otherAp = el.__aplayer;
+        if (otherAp && otherAp !== ap) {
+          otherAp.pause();
+        }
+      });
+    });
+  }, []);
 
   if (!playlist) {
     return <div>Playlist no encontrada</div>;
   }
-
-  // ✅ Actualiza los tracks globalmente con un ID único
-  useEffect(() => {
-  setCurrentTracks({ id, list: playlist.tracks });
-}, [id, playlist, setCurrentTracks]);
-
 
   const styles = {
     backButton: {
@@ -41,7 +63,9 @@ function Player() {
 
   return (
     <div style={styles.container}>
-      <Link to="/" style={styles.backButton}>← Volver al menú</Link>
+      <Link to="/" style={styles.backButton}>
+        ← Volver al menú
+      </Link>
       <h2 style={styles.heading}>{playlist.name}</h2>
     </div>
   );
