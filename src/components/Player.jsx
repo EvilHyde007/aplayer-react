@@ -1,14 +1,21 @@
-import { useParams, Link } from "react-router-dom";
-import APlayerWrapper from "../components/APlayerWrapper";
+import { useParams, Link, useOutletContext } from "react-router-dom";
 import { Playlists } from "./Playlists";
+import { useEffect } from "react";
 
 function Player() {
   const { id } = useParams();
   const playlist = Playlists[id];
+  const { setCurrentTracks } = useOutletContext(); // ✅ primero obtenemos la función
 
   if (!playlist) {
     return <div>Playlist no encontrada</div>;
   }
+
+  // ✅ Actualiza los tracks globalmente con un ID único
+  useEffect(() => {
+  setCurrentTracks({ id, list: playlist.tracks });
+}, [id, playlist, setCurrentTracks]);
+
 
   const styles = {
     backButton: {
@@ -36,7 +43,6 @@ function Player() {
     <div style={styles.container}>
       <Link to="/" style={styles.backButton}>← Volver al menú</Link>
       <h2 style={styles.heading}>{playlist.name}</h2>
-      <APlayerWrapper tracks={playlist.tracks} />
     </div>
   );
 }

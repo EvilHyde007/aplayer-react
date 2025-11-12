@@ -6,14 +6,15 @@ import APlayerWrapper from "./APlayerWrapper";
 const Layout = () => {
   const location = useLocation();
   const isPlaylistRoute = /^\/playlist\/[^/]+$/.test(location.pathname);
-  const [currentTracks, setCurrentTracks] = useState([]);
+  const [currentTracks, setCurrentTracks] = useState({ id: null, list: [] });
+
 
   // 🔁 Limpiar los tracks si salís de la ruta de playlist
-  useEffect(() => {
-    if (!isPlaylistRoute) {
-      setCurrentTracks([]);
-    }
-  }, [location.pathname]);
+  // useEffect(() => {
+  //   if (!isPlaylistRoute) {
+  //     setCurrentTracks([]);
+  //   }
+  // }, [location.pathname]);
 
   const isMobile = window.innerWidth < 768;
 
@@ -39,6 +40,12 @@ const Layout = () => {
       >
         <Outlet context={{ setCurrentTracks }} />
       </div>
+     <APlayerWrapper tracks={currentTracks} visible={isPlaylistRoute} />
+
+
+
+
+
 
       
       {/* {currentTracks.length > 0 && isPlaylistRoute && (
