@@ -12,48 +12,55 @@ const APlayerWrapper = forwardRef(({ tracks, visible }, ref) => {
     if (!playerRef.current) return;
 
     if (!apRef.current) {
-      const ap = new APlayer({
-        container: playerRef.current,
-        audio: tracks.list,
-        theme: "#f82c08",
-        listFolded: false,
-        listMaxHeight: "390px",
-        autoplay: false,
-      });
-
-      apRef.current = ap;
-
-      if ("mediaSession" in navigator) {
-        const updateMetadata = () => {
-          const current = ap.list.audios[ap.list.index];
-          navigator.mediaSession.metadata = new window.MediaMetadata({
-            title: current.name,
-            artist: current.artist,
-            artwork: [
-              { src: current.cover, sizes: "512x512", type: "image/jpeg" },
-            ],
-          });
-        };
-
-        ap.on("play", updateMetadata);
-        ap.on("listswitch", updateMetadata);
-
-        navigator.mediaSession.setActionHandler("previoustrack", () =>
-          ap.skipBack()
-        );
-        navigator.mediaSession.setActionHandler("nexttrack", () =>
-          ap.skipForward()
-        );
-      }
-
-      ap.on("play", () => {
-        document.querySelectorAll(".aplayer").forEach((el) => {
-          const otherAp = el.__aplayer;
-          if (otherAp && otherAp !== ap) {
-            otherAp.pause();
-          }
+      setTimeout(() => {
+        const ap = new APlayer({
+          container: playerRef.current,
+          audio: tracks.list,
+          theme: "#f82c08",
+          listFolded: false,
+          listMaxHeight: "390px",
+          autoplay: false,
         });
-      });
+
+        apRef.current = ap;
+
+        if ("mediaSession" in navigator) {
+          const updateMetadata = () => {
+            const current = ap.list.audios[ap.list.index];
+            navigator.mediaSession.metadata = new window.MediaMetadata({
+              title: current.name,
+              artist: current.artist,
+              artwork: [
+                { src: current.cover, sizes: "512x512", type: "image/jpeg" },
+              ],
+            });
+          };
+
+          ap.on("play", updateMetadata);
+          ap.on("listswitch", updateMetadata);
+
+          navigator.mediaSession.setActionHandler("previoustrack", () =>
+            ap.skipBack()
+          );
+          navigator.mediaSession.setActionHandler("nexttrack", () =>
+            ap.skipForward()
+          );
+        }
+
+        ap.on("play", () => {
+          document.querySelectorAll(".aplayer").forEach((el) => {
+            const otherAp = el.__aplayer;
+            if (otherAp && otherAp !== ap) {
+              otherAp.pause();
+            }
+          });
+        });
+
+        // Log para detectar pausas inesperadas
+        // ap.on("pause", () => {
+        //   console.log("⚠️ Reproductor pausado:", ap.list.audios[ap.list.index]);
+        // });
+      }, 50); 
     } else if (tracks?.list?.length) {
       const ap = apRef.current;
 
@@ -63,7 +70,7 @@ const APlayerWrapper = forwardRef(({ tracks, visible }, ref) => {
         ap.__playlistId = tracks.id;
       }
     }
-  }, [tracks]);
+  }, [tracks.id]); 
 
   return (
     <div

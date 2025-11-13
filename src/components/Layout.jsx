@@ -51,7 +51,7 @@ const Layout = () => {
           left: isMobile ? 0 : "240px",
           right: 0,
           top: isMobile ? "144px" : "180px",
-          padding: "10px 20px",
+          // padding: "10px 20px",
         }}
       >
         {Object.entries(activePlayers).map(([id, ref]) => (

@@ -9,3 +9,18 @@ body {
   background-color: #000; 
   color: white;
 }
+
+@media (prefers-color-scheme: dark) {
+ .aplayer * {
+    box-sizing: content-box;
+    color: #666;
+}
+}
+
+@media (prefers-color-scheme: light) {
+  .aplayer * {
+    box-sizing: content-box;
+    color: #666;
+}
+}
+
