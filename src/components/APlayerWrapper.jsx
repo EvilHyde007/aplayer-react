@@ -82,6 +82,8 @@ const APlayerWrapper = forwardRef(({ tracks, visible }, ref) => {
         margin: "0 auto",
         paddingBottom: "20px",
         height: "auto",
+            // top: "24%"
+
       }}
     />
   );

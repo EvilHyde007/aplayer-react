@@ -1,6 +1,6 @@
+import { useRef, useEffect } from "react";
 import { useParams, Link, useOutletContext } from "react-router-dom";
 import { Playlists } from "./Playlists";
-import { useRef, useEffect } from "react";
 
 function Player() {
   const { id } = useParams();
@@ -40,26 +40,33 @@ function Player() {
   }
 
   const styles = {
-    backButton: {
-      display: "inline-block",
-      marginBottom: "20px",
-      padding: "8px 16px",
-      backgroundColor: "#1db954",
-      color: "white",
-      borderRadius: "20px",
-      textDecoration: "none",
-      fontWeight: "bold",
-      fontSize: "0.9rem",
-    },
-    heading: {
-      marginBottom: "20px",
-    },
-    container: {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-    },
-  };
+  backButton: {
+    display: "inline-block",
+    marginBottom: "20px",
+    padding: "10px 20px",
+    backgroundColor: "#1db954",
+    color: "white",
+    borderRadius: "24px",
+    textDecoration: "none",
+    fontWeight: "600",
+    fontSize: "0.9rem",
+    transition: "all 0.2s ease",
+    border: "none",
+    cursor: "pointer",
+  },
+  heading: {
+    marginBottom: "30px",
+    fontSize: "2rem",
+    fontWeight: "700",
+    textAlign: "center",
+  },
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    // padding: "40px 20px",
+  },
+};
 
   return (
     <div style={styles.container}>

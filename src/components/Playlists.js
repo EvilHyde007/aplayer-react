@@ -1,5 +1,6 @@
 import { TrackListSombras } from "./grupo sombras/TrackListSombras";
 import { TrackListIndochineLiveZenith } from "./indochine live Zenith 1986/TrackListIndochine";
+import { TrackListMarDeCopas } from "./mar de copas/TrackListMarDeCopas";
 import { TrackListNestorEnBloque } from "./nestor en bloque/TrackListNestroEnBloque";
 import { TrackListSalsaMix } from "./salsa mix/SalsaMix";
 
@@ -23,6 +24,11 @@ export const Playlists = {
     name: 'Salsa Mix',
     cover: TrackListSalsaMix[0].cover,
     tracks: TrackListSalsaMix,
+  },
+  MarDeCopas: {
+    name: 'Mar de Copas',
+    cover: TrackListMarDeCopas[0].cover,
+    tracks: TrackListMarDeCopas,
   },
 //    a: {
 //     name: 'Grupo Sombras',

@@ -1,6 +1,6 @@
+import { useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Sidebar from "./Sidebar";
-import { useState } from "react";
 import APlayerWrapper from "./APlayerWrapper";
 import { Playlists } from "./Playlists";
 
@@ -19,7 +19,8 @@ const Layout = () => {
           display: "flex",
           flexDirection: isMobile ? "column" : "row",
           minHeight: "100vh",
-          background: "linear-gradient(to bottom right, #1db954, #191414)",
+          background:
+            "linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #1db954 100%)",
           color: "white",
         }}
       >
@@ -51,6 +52,8 @@ const Layout = () => {
           left: isMobile ? 0 : "240px",
           right: 0,
           top: isMobile ? "144px" : "180px",
+          paddingTop: "48px",
+          // inset: "24px 0px 0px",
           // padding: "10px 20px",
         }}
       >
