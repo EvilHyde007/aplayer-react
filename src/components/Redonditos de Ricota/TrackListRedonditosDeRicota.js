@@ -1,0 +1,155 @@
+const coverRedonditosDeRicota =
+  "https://audio-assets1.web.app/portadas/Redonditos%20de%20Ricota.jpg";
+export const TrackListRedonditosDeRicota = [
+  {
+    name: "Un Poco de Amor Francés",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/Un%20Poco%20de%20Amor%20Franc%C3%A9s.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+   {
+    name: "La Bestia Pop",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/La%20Bestia%20Pop.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+   {
+    name: "Jijiji",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/Jijiji.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+  {
+    name: "Esa Estrella Era Mi Lujo",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/Esa%20Estrella%20Era%20Mi%20Lujo.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+  {
+    name: "Tarea Fina",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/Tarea%20Fina.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+  {
+    name: "Masacre en el Puticlub",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/Masacre%20en%20el%20Puticlub.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+  {
+    name: "El Infierno esta Encantador esta Noche",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/El%20Infierno%20esta%20Encantador%20esta%20Noche.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+  {
+    name: "El Pibe de los Astilleros",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/El%20Pibe%20de%20los%20Astilleros.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+  {
+    name: "Vencedores Vencidos",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/Vencedores%20Vencidos.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+  {
+    name: "Un Angel para tu Soledad",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/Un%20Angel%20para%20tu%20Soledad.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+  {
+    name: "Yo Canibal",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/Yo%20Canibal.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+   {
+    name: "Mariposa Pontiac",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/Mariposa%20Pontiac.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+  {
+    name: "La Hija del Fletero",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/La%20Hija%20del%20Fletero.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+  {
+    name: "Juguetes Perdidos",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/Juguetes%20Perdidos.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+  {
+    name: "Aquella Solitaria Vaca Cubana",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/Aquella%20Solitaria%20Vaca%20Cubana.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+  {
+    name: "Preso en mi Ciudad",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/Preso%20en%20mi%20Ciudad.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+   {
+    name: "Flight 956",
+    artist: "Indio Solari y LFDAA",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/Flight%20956.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+  {
+    name: "Luzbelito y las Sirenas",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/Luzbelito%20y%20las%20Sirenas.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+  {
+    name: "Barbazul Versus el Amor Letal",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/Barbazul%20Versus%20el%20Amor%20Letal.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+  {
+    name: "Susanita",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/Susanita.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+  {
+    name: "Superlogico",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/Superlogico.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+  {
+    name: "Rock para el Negro Atila",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/Rock%20para%20el%20Negro%20Atila.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+  {
+    name: "Vamos las Bandas",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/Vamos%20las%20Bandas.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+  {
+    name: "Ella Debe Estar Tan Linda",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/Ella%20Debe%20Estar%20Tan%20Linda.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+  {
+    name: "Todo Preso es Politico",
+    artist: "Redonditos de Ricota",
+    url: "https://audio-assets1.web.app/audio/Redonditos%20de%20Ricota/Todo%20Preso%20es%20Politico.mp3",
+    cover: coverRedonditosDeRicota,
+  },
+ 
+];
